@@ -1,29 +1,10 @@
 .app-wrapper {
-  display: grid;
-  width: 100%;
-  grid-template-areas:
+    display: grid;
+    width: 100%;
+    grid-template-areas:
           "header header"
           "nav content";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  /*grid-gap: 10px;*/
-}
-
-.app-wrapper > header {
-  grid-area: header;
-}
-
-.app-wrapper > header > img {
-  height: 60px;
-}
-.app-wrapper > .content > img {
-  width: 100%;
-}
-
-.app-wrapper > nav {
-  grid-area: nav;
-}
-
-.content {
-  grid-area: content;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: 10px;*/
 }

@@ -1,0 +1,15 @@
+.app-wrapper > .content > img {
+    width: 100%;
+}
+
+.content {
+    grid-area: content;
+}
+
+.item {
+    color: blue;
+}
+
+.posts {
+    border: 1px solid blue;
+}

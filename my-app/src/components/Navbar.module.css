@@ -1,0 +1,11 @@
+.app-wrapper > nav {
+    grid-area: nav;
+}
+
+.item {
+    color: darkmagenta;
+}
+
+.item.active {
+    color: mediumaquamarine;
+}
