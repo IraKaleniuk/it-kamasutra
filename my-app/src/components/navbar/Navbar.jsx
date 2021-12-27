@@ -5,10 +5,10 @@ const Navbar = () => {
     return (
         <nav>
             <div className={`${styles.item} ${styles.active}`}>
-                <a>Profile</a>
+                <a href={"/profile"}>Profile</a>
             </div>
             <div className={styles.item}>
-                <a>Messages</a>
+                <a href={"/dialogs"}>Messages</a>
             </div>
             <div className={styles.item}>
                 <a>News</a>
