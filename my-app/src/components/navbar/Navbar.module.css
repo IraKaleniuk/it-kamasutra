@@ -1,11 +1,13 @@
 .app-wrapper > nav {
     grid-area: nav;
+    padding: 20px;
 }
 
-.item {
+.item a {
     color: darkmagenta;
+    text-decoration: none;
 }
 
-.item.active {
-    color: mediumaquamarine;
+.activeLink {
+    color: red !important;
 }
