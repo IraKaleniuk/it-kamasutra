@@ -3,10 +3,6 @@ import styles from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
-    const activeStyle = {
-        color: "red"
-    }
-
     return (
         <nav>
             <div className={styles.item}>
