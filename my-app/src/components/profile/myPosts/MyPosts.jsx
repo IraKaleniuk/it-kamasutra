@@ -5,14 +5,15 @@ import Post from "./post/Post";
 const MyPosts = (props) => {
 
     let postsElements = props.posts
-        .map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+        .map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
         let textMessage = newPostElement.current.value;
-        alert(textMessage);
-    }
+        props.addPost(textMessage);
+        newPostElement.current.value='';
+    };
 
     return (
         <div className={styles.postsBlock}>
@@ -31,6 +32,6 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-}
+};
 
 export default MyPosts;
