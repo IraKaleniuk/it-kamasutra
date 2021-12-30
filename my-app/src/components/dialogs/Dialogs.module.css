@@ -9,6 +9,24 @@
 }
 
 .dialog {
+    height: 4em;
+    display: flex;
+    align-items: center;
+}
+.dialog img {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding-left: 10px;
+ /*   position: ;
+    top: 50%;
+    transform: translate(0, -50%)*/
 }
 
 .messages {
