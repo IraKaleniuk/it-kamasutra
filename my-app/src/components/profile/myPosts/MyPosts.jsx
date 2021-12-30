@@ -2,7 +2,7 @@ import React from "react";
 import styles from './MyPosts.module.css';
 import Post from "./post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
     let posts = [
         {id: 1, message: 'Hi, how are you?', likesCount: 12},
