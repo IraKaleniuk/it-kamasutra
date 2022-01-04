@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {sendMessage, updateNewMessageText} from "./redux/state";
+// import {sendMessage, updateNewMessageText} from "./redux/state";
 
 const App = (props) => {
     return (
@@ -18,8 +18,8 @@ const App = (props) => {
                         <Route path="/dialogs" element={<Dialogs
                             state={props.state.messagesPage}
                             //newMessageText={props.newMessageText}
-                            sendMessage={sendMessage}
-                            updateNewMessageText={updateNewMessageText}/>}/>
+                            sendMessage={props.sendMessage}
+                            updateNewMessageText={props.updateNewMessageText}/>}/>
                         <Route path="/profile" element={<Profile
                             state={props.state.profilePage}
                             addPost={props.addPost}
