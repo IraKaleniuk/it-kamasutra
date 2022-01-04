@@ -27,7 +27,7 @@ let store = {
                 {id: 3, message: 'Have a nice evening'},
                 {id: 4, message: 'Yo'}
             ],
-            newMessageText: 'hello'
+            newMessageText: ''
         }
     },
     _callSubscriber() {
@@ -98,14 +98,14 @@ let store = {
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) => {
+export const addPostCreator = () => ({type: ADD_POST})
+export const updateNewPostTextCreator = (text) => {
     return (
         {type: UPDATE_NEW_POST_TEXT, newText: text}
     )
 }
 export const addNewMessageCreator = () => ({type: SEND_MESSAGE})
-export const updateNewMessageActionCreator = (text) => {
+export const updateNewMessageCreator = (text) => {
     return (
         {type: UPDATE_NEW_MESSAGE_TEXT, newText: text}
     )
