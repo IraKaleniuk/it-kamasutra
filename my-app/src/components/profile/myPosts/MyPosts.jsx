@@ -1,19 +1,18 @@
 import React from "react";
 import styles from './MyPosts.module.css';
 import Post from "./post/Post";
-import {addPostCreator, updateNewPostTextCreator} from "../../../redux/profileReduser";
 
 const MyPosts = (props) => {
     let postsElements =
         props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
-    let addPost = () => {
-        props.dispatch(addPostCreator());
+    let onAddPost = () => {
+        props.addPost();
     };
 
     let onPostChange = (event) => {
         let text = event.target.value;
-        props.dispatch(updateNewPostTextCreator(text));
+        props.updateNewPostText(text);
     };
 
     return (
@@ -27,7 +26,7 @@ const MyPosts = (props) => {
                           value={props.newPostText}/>
             </div>
             <div>
-                <button onClick={addPost}>Add post</button>
+                <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={styles.posts}>
                 {postsElements}
