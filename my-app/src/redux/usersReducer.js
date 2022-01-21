@@ -5,31 +5,7 @@ const SET_USERS = 'SET-USERS'
 
 
 let initialState = {
-    users: [/*{
-        id: 1,
-        photoUrl: 'https://i1.sndcdn.com/avatars-3ZCCUZugLlCvBtcQ-KrUSBA-t500x500.jpg',
-        followed: false,
-        fullName: 'Ira',
-        status: 'I am a boss',
-        location: {city: 'Mlyniv', country: 'Ukraine'}
-    },
-        {
-            id: 2,
-            photoUrl: 'https://i1.sndcdn.com/avatars-3ZCCUZugLlCvBtcQ-KrUSBA-t500x500.jpg',
-            followed: true,
-            fullName: 'Natali',
-            status: 'I am a boss too',
-            location: {city: 'Kyiv', country: 'Ukraine'}
-        },
-        {
-            id: 3,
-            photoUrl: 'https://i1.sndcdn.com/avatars-3ZCCUZugLlCvBtcQ-KrUSBA-t500x500.jpg',
-            followed: false,
-            fullName: 'Kate',
-            status: 'I am a boss too',
-            location: {city: 'Minsk', country: 'Belarus'}
-        }*/
-    ]
+    users: []
 }
 
 
