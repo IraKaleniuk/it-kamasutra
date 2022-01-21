@@ -3,8 +3,9 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
 
 
+
 let initialState = {
-    users: [{
+    users: [/*{
         id: 1,
         photoUrl: 'https://i1.sndcdn.com/avatars-3ZCCUZugLlCvBtcQ-KrUSBA-t500x500.jpg',
         followed: false,
@@ -27,8 +28,11 @@ let initialState = {
             fullName: 'Kate',
             status: 'I am a boss too',
             location: {city: 'Minsk', country: 'Belarus'}
-        }]
+        }*/
+    ]
 }
+
+
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
