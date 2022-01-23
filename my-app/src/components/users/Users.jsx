@@ -64,8 +64,8 @@ class Users extends React.Component {
                     {
                         this.generatePageRange(this.props.currentPage, pagesCount)
                             .map(p => {
-                                return <span className={this.props.currentPage === p ? styles.selectedPage : ""}
-                                             onClick={(e) => this.onPageChange(p)}>-{p}-</span>
+                                return <span className={this.props.currentPage === p ? styles.selectedPage : styles.page}
+                                             onClick={(e) => this.onPageChange(p)}>{p}</span>
                             })
                     }
                 </div>
