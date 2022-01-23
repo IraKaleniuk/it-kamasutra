@@ -1,7 +1,13 @@
 import React from "react";
 import styles from './ProfileInfo.module.css';
+import Preloader from "../../common/preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div>
             <div>
@@ -11,8 +17,7 @@ const ProfileInfo = () => {
             </div>
             <div className={styles.descriptionBlock}>
                 <img
-                    src={"https://media1.popsugar-assets.com/files/thumbor/l3tGpIatkHybxJGKNsK1BDe_WJs/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2014/08/08/878/n/1922507/9ed5cdef48c5ef69_thumb_temp_image32304521407524949/i/Funny-Cat-GIFs.jpg"}
-                    alt={"Photo"}/>
+                    src={props.profile.photos.large} alt={"Photo"}/>
             </div>
         </div>
     )
