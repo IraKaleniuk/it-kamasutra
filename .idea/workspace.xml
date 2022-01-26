@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="lesson-60-part-1">
+    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="lesson-60">
+      <change afterPath="$PROJECT_DIR$/my-app/src/components/header/HeaderContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/redux/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/header/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/redux/profileReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/profileReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/redux/reduxStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/reduxStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-app/src/components/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-app/src/components/header" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -31,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\react_js\itk\my-app\src\components\header" />
       <recent name="C:\Users\Admin\react_js\itk\my-app\src\components\profile" />
     </key>
   </component>
@@ -55,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642938187525</updated>
       <workItem from="1642938189810" duration="22000" />
-      <workItem from="1643145807054" duration="10752000" />
+      <workItem from="1643145807054" duration="23742000" />
     </task>
     <task id="LOCAL-00001" summary="lesson-60-part-1">
       <created>1643199478073</created>
@@ -64,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643199478073</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lesson-60">
+      <created>1643200604066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643200604067</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lesson-60-part-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson-60-part-1" />
+    <MESSAGE value="lesson-60" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson-60" />
   </component>
 </project>
