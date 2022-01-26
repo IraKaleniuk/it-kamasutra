@@ -8,6 +8,13 @@ import {useParams} from "react-router-dom";
 const ProfileContainer = (props) => {
 
     let urlParams = useParams()
+    console.log(urlParams.userId)
+
+    if (!urlParams.userId) {
+         urlParams = {
+            userId: '2'
+        }
+    }
 
         useEffect(() => {
             axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${urlParams.userId}`)

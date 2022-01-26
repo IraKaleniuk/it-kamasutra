@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="">
+    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="lesson-60-part-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +55,16 @@
       <option name="presentableId" value="Default" />
       <updated>1642938187525</updated>
       <workItem from="1642938189810" duration="22000" />
-      <workItem from="1643145807054" duration="9698000" />
+      <workItem from="1643145807054" duration="10752000" />
     </task>
+    <task id="LOCAL-00001" summary="lesson-60-part-1">
+      <created>1643199478073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643199478073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,5 +80,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lesson-60-part-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson-60-part-1" />
   </component>
 </project>
