@@ -20,7 +20,8 @@ const UsersContainer = (props) => {
             params: {
                 page: props.currentPage,
                 count: props.pageSize
-            }
+            },
+            withCredentials: true
         }).then(response => {
             props.toggleIsFetching(false)
             props.setUsers(response.data.items)
@@ -35,7 +36,8 @@ const UsersContainer = (props) => {
             params: {
                 page: p,
                 count: props.pageSize
-            }
+            },
+            withCredentials: true
         }).then(response => {
             props.toggleIsFetching(false)
             props.setUsers(response.data.items)
