@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
 import * as axios from "axios";
-import {setUserData} from "../../redux/authReducer";
+import {setAuthUserData} from "../../redux/authReducer";
 import {toggleIsFetching} from "../../redux/usersReducer";
 import Preloader from "../common/preloader/Preloader";
 
@@ -15,10 +15,10 @@ const HeaderContainer = (props) => {
                 props.toggleIsFetching(false)
                 if (response.data.resultCode === 0) {
                     let {id, login, email} = response.data.data
-                    props.setUserData(id, email, login)
+                    props.setAuthUserData(id, email, login)
                 }
             })
-    })
+    },[])
 
     return <>
         {props.isFetching ? <Preloader/> : null}
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, {setUserData, toggleIsFetching})(HeaderContainer)
+export default connect(mapStateToProps, {setAuthUserData, toggleIsFetching})(HeaderContainer)

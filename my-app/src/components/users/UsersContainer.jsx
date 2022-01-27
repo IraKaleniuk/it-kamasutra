@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {
     follow,
@@ -12,35 +12,36 @@ import Users from "./Users";
 import * as axios from "axios";
 import Preloader from "../common/preloader/Preloader";
 
-class UsersContainer extends React.Component {
-    componentDidMount() {
-        this.props.toggleIsFetching(true)
+const UsersContainer = (props) => {
+
+    useEffect(() => {
+        props.toggleIsFetching(true)
         axios.get("https://social-network.samuraijs.com/api/1.0/users", {
             params: {
-                page: this.props.currentPage,
-                count: this.props.pageSize
+                page: props.currentPage,
+                count: props.pageSize
             }
         }).then(response => {
-            this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items)
-            this.props.setTotalUsersCount(response.data.totalCount)
+            props.toggleIsFetching(false)
+            props.setUsers(response.data.items)
+            props.setTotalUsersCount(response.data.totalCount)
         })
-    }
+    }, [])
 
-    onPageChange = (p) => {
-        this.props.setCurrentPage(p)
-        this.props.toggleIsFetching(true)
+    let onPageChange = (p) => {
+        props.setCurrentPage(p)
+        props.toggleIsFetching(true)
         axios.get("https://social-network.samuraijs.com/api/1.0/users", {
             params: {
                 page: p,
-                count: this.props.pageSize
+                count: props.pageSize
             }
         }).then(response => {
-            this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items)
+            props.toggleIsFetching(false)
+            props.setUsers(response.data.items)
         })
     }
-    generatePageRange = (currentPage, lastPage) => {
+    let generatePageRange = (currentPage, lastPage) => {
         const delta = 1;
 
         const range = [];
@@ -61,20 +62,20 @@ class UsersContainer extends React.Component {
         return range;
     }
 
-    render() {
-        return <>
-            {this.props.isFetching ? <Preloader/> : null}
-            <Users totalUsersCount={this.props.totalUsersCount}
-                   pageSize={this.props.pageSize}
-                   generatePageRange={this.generatePageRange}
-                   currentPage={this.props.currentPage}
-                   onPageChange={this.onPageChange}
-                   users={this.props.users}
-                   unfollow={this.props.unfollow}
-                   follow={this.props.follow}
+    return (
+        <>
+            {props.isFetching ? <Preloader/> : null}
+            <Users totalUsersCount={props.totalUsersCount}
+                   pageSize={props.pageSize}
+                   generatePageRange={generatePageRange}
+                   currentPage={props.currentPage}
+                   onPageChange={onPageChange}
+                   users={props.users}
+                   unfollow={props.unfollow}
+                   follow={props.follow}
             />
         </>
-    }
+    )
 }
 
 const mapStateToProps = (state) => {

@@ -1,6 +1,7 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
+const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
 
 let initialState = {
     posts: [
@@ -10,7 +11,8 @@ let initialState = {
         {id: 4, message: "It's my first post!", likesCount: 10},
     ],
     newPostText: 'it-kamasutra.com',
-    profile: null
+    profile: null,
+    isFetching: false
 }
 
  const profileReducer = (state = initialState, action) => {
@@ -45,6 +47,14 @@ let initialState = {
                 }
             )
         }
+        case TOGGLE_IS_FETCHING: {
+            return (
+                {
+                    ...state,
+                    isFetching: action.isFetching
+                }
+            )
+        }
         default:
             return state;
     }
@@ -57,5 +67,6 @@ export const updateNewPostTextCreator = (text) => {
     )
 }
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
+export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
 export default profileReducer;
