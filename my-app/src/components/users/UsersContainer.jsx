@@ -9,38 +9,26 @@ import {
     toggleIsFetching
 } from "../../redux/usersReducer";
 import Users from "./Users";
-import * as axios from "axios";
 import Preloader from "../common/preloader/Preloader";
+import {API} from "../../api/api";
 
 const UsersContainer = (props) => {
 
     useEffect(() => {
         props.toggleIsFetching(true)
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
-            params: {
-                page: props.currentPage,
-                count: props.pageSize
-            },
-            withCredentials: true
-        }).then(response => {
+        API.getUsers(props.currentPage, props.pageSize).then(data => {
             props.toggleIsFetching(false)
-            props.setUsers(response.data.items)
-            props.setTotalUsersCount(response.data.totalCount)
+            props.setUsers(data.items)
+            props.setTotalUsersCount(data.totalCount)
         })
     }, [])
 
     let onPageChange = (p) => {
         props.setCurrentPage(p)
         props.toggleIsFetching(true)
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
-            params: {
-                page: p,
-                count: props.pageSize
-            },
-            withCredentials: true
-        }).then(response => {
+        API.getUsers(p, props.pageSize).then(data => {
             props.toggleIsFetching(false)
-            props.setUsers(response.data.items)
+            props.setUsers(data.items)
         })
     }
     let generatePageRange = (currentPage, lastPage) => {
