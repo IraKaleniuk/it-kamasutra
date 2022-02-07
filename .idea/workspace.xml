@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="lesson-63">
+    <list default="true" id="361ce620-207e-4aba-b5d1-e0b2d1462408" name="Changes" comment="lesson-64">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/profile/ProfileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/components/users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/components/users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/redux/profileReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/profileReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/redux/reduxStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/reduxStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/redux/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642938187525</updated>
       <workItem from="1642938189810" duration="22000" />
-      <workItem from="1643145807054" duration="43341000" />
+      <workItem from="1643145807054" duration="51205000" />
     </task>
     <task id="LOCAL-00001" summary="lesson-60-part-1">
       <created>1643199478073</created>
@@ -108,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643398769118</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="lesson-64">
+      <created>1643401813334</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643401813334</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +146,7 @@
     <MESSAGE value="lesson-61" />
     <MESSAGE value="lesson-62" />
     <MESSAGE value="lesson-63" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson-63" />
+    <MESSAGE value="lesson-64" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson-64" />
   </component>
 </project>
