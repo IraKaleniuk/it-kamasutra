@@ -1,10 +1,9 @@
 import React, {useEffect} from "react";
 import Profile from "./Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
-import {setUserProfile, toggleIsFetching} from "../../redux/profileReduser";
 import {useParams} from "react-router-dom";
 import Preloader from "../common/preloader/Preloader";
+import {getProfile} from "../../redux/profileReduser";
 
 const ProfileContainer = (props) => {
 
@@ -17,12 +16,7 @@ const ProfileContainer = (props) => {
     }
 
     useEffect(() => {
-        props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${urlParams.userId}`)
-            .then(response => {
-                props.setUserProfile(response.data)
-                props.toggleIsFetching(false)
-            })
+        props.getProfile(urlParams.userId)
     }, [])
     return (
         <>
@@ -38,4 +32,4 @@ const mapStateToProps = (state) => {
         isFetching: state.profilePage.isFetching
     })
 }
-export default connect(mapStateToProps, {setUserProfile, toggleIsFetching})(ProfileContainer);
+export default connect(mapStateToProps, {getProfile})(ProfileContainer);
