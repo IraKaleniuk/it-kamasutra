@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
-import {me} from "../../redux/authReducer";
+import {getAuthUserData} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
 
 const HeaderContainer = (props) => {
 
     useEffect(() => {
-        me()
+        props.getAuthUserData()
     }, [])
 
     return <>
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, {me})(HeaderContainer)
+export default connect(mapStateToProps, {getAuthUserData})(HeaderContainer)

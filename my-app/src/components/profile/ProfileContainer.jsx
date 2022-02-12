@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {useParams} from "react-router-dom";
 import Preloader from "../common/preloader/Preloader";
-import {getProfile} from "../../redux/profileReduser";
+import {getUserProfile} from "../../redux/profileReduser";
 
 const ProfileContainer = (props) => {
 
@@ -16,7 +16,7 @@ const ProfileContainer = (props) => {
     }
 
     useEffect(() => {
-        props.getProfile(urlParams.userId)
+        props.getUserProfile(urlParams.userId)
     }, [])
     return (
         <>
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
         isFetching: state.profilePage.isFetching
     })
 }
-export default connect(mapStateToProps, {getProfile})(ProfileContainer);
+export default connect(mapStateToProps, {getUserProfile})(ProfileContainer);

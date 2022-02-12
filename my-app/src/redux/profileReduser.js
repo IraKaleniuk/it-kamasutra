@@ -71,7 +71,7 @@ export const updateNewPostTextCreator = (text) => {
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
-export const getProfile = (userId) => {
+export const getUserProfile = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
         usersAPI.getProfile(userId).then(response => {

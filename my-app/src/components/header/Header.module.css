@@ -1,6 +1,6 @@
 .header {
     grid-area: header;
-    background-color: darkseagreen;
+    background-color: darkgreen;
 }
 
 .logo {
@@ -12,6 +12,6 @@
 }
 
 .loginBlock a {
-    color: darkblue;
+    color: white;
 }
 
