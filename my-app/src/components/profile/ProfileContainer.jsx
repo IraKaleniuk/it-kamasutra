@@ -29,7 +29,8 @@ const ProfileContainer = (props) => {
 const mapStateToProps = (state) => {
     return ({
         profile: state.profilePage.profile,
-        isFetching: state.profilePage.isFetching
+        isFetching: state.profilePage.isFetching,
+        isAuth: state.auth.isAuth
     })
 }
 export default connect(mapStateToProps, {getUserProfile})(ProfileContainer);
