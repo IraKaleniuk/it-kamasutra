@@ -20,6 +20,9 @@ const App = () => {
                         />
                         <Route path="/profile/">
                             <Route path=":userId" element={<ProfileContainer/>}/>
+{/*
+                            <Route path="status/:userId" element={<ProfileContainer/>}/>
+*/}
                             <Route path="" element={<ProfileContainer/>}/>
                         </Route>
                         <Route path="/users" element={<UsersContainer/>}

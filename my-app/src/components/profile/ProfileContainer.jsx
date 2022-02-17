@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {useParams} from "react-router-dom";
 import Preloader from "../common/preloader/Preloader";
-import {getUserProfile} from "../../redux/profileReduser";
+import {getUserProfile, getUserProfileStatus} from "../../redux/profileReduser";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
 
@@ -31,11 +31,12 @@ const ProfileContainer = (props) => {
 const mapStateToProps = (state) => {
     return ({
         profile: state.profilePage.profile,
+        status: state.profilePage.status,
         isFetching: state.profilePage.isFetching,
     })
 }
 
 export default compose(
-    connect(mapStateToProps, {getUserProfile}),
+    connect(mapStateToProps, {getUserProfile, getUserProfileStatus}),
     withAuthRedirect
 )(ProfileContainer)

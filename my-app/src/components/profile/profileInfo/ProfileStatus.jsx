@@ -1,11 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 // import styles from "./ProfileInfo.module.css"
 
 const ProfileStatus = (props) => {
+    let urlParams = useParams()
 
-    /*let state = {
-        editMode: false
-    }*/
+    if (!urlParams.userId) {
+        urlParams = {
+            userId: '2'
+        }
+    }
+
+    useEffect(() => {
+        props.getUserProfileStatus(urlParams.userId)
+    }, [])
 
     const [editMode, setEditMode] = useState(false)
 
