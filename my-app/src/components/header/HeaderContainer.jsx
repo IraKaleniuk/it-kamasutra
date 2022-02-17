@@ -3,6 +3,7 @@ import Header from "./Header";
 import {connect} from "react-redux";
 import {getAuthUserData} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
+import {compose} from "redux";
 
 const HeaderContainer = (props) => {
 
@@ -23,4 +24,6 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, {getAuthUserData})(HeaderContainer)
+export default compose(
+    connect(mapStateToProps, {getAuthUserData})
+)(HeaderContainer)
