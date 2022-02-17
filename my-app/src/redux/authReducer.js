@@ -62,5 +62,18 @@ export const getAuthUserData = () => {
     }
 }
 
+export const me = () => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true))
+        authAPI.me().then(response => {
+            dispatch(toggleIsFetching(false))
+            if (response.resultCode === 0) {
+                let {id, login, email} = response
+                dispatch(setAuthUserData(id, email, login))
+            }
+        })
+    }
+}
+
 
 export default authReducer;

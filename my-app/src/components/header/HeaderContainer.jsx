@@ -14,7 +14,7 @@ const HeaderContainer = (props) => {
     return <>
         {props.isFetching ? <Preloader/> : null}
         <Header {...props}/>
-    </>
+        </>
 }
 
 const mapStateToProps = (state) => {
