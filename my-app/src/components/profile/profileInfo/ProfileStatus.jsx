@@ -1,27 +1,20 @@
-import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-// import styles from "./ProfileInfo.module.css"
+import React, {useState} from "react";
 
 const ProfileStatus = (props) => {
-    let urlParams = useParams()
-
-    if (!urlParams.userId) {
-        urlParams = {
-            userId: '2'
-        }
-    }
-
-    useEffect(() => {
-        props.getUserProfileStatus(urlParams.userId)
-    }, [])
-
     const [editMode, setEditMode] = useState(false)
+    const [status, setStatus] = useState(props.status)
 
     const activateEditMode = () => {
         setEditMode(true)
     }
     const deactivateEditMode = () => {
         setEditMode(false)
+        props.updateStatus(status)
+    }
+
+    let onStatusChange = (e) => {
+        setStatus(e.currentTarget.value)
+
     }
 
     return (
@@ -29,11 +22,14 @@ const ProfileStatus = (props) => {
             {editMode ?
                 <div>
                     <input autoFocus={true}
-                           value={props.status}
+                           onChange={onStatusChange}
+                           value={status}
                            onBlur={deactivateEditMode}></input>
                 </div>
                 : <div>
-                    <span onDoubleClick={activateEditMode}>{props.status}</span>
+                    <span onDoubleClick={activateEditMode}>{
+                        props.status === '' ? '------' : props.status
+                    }</span>
                 </div>}
 
 

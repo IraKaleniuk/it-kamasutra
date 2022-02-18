@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {useParams} from "react-router-dom";
 import Preloader from "../common/preloader/Preloader";
-import {getUserProfile, getUserProfileStatus} from "../../redux/profileReduser";
+import {getStatus, getUserProfile, updateStatus} from "../../redux/profileReduser";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
 
@@ -13,17 +13,19 @@ const ProfileContainer = (props) => {
 
     if (!urlParams.userId) {
         urlParams = {
-            userId: '2'
+            userId: '22531'
         }
     }
 
     useEffect(() => {
         props.getUserProfile(urlParams.userId)
+        props.getStatus(urlParams.userId)
+
     }, [])
     return (
         <>
             {props.isFetching ? <Preloader/> : null}
-            <Profile {...props} profile={props.profile}/>
+            <Profile {...props}  />
         </>
     )
 }
@@ -37,6 +39,6 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getUserProfile, getUserProfileStatus}),
+    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
     withAuthRedirect
 )(ProfileContainer)
