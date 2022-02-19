@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import Header from "./Header";
+import TopBar from "./Header";
 import {connect} from "react-redux";
 import {getAuthUserData} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
@@ -9,11 +9,11 @@ const HeaderContainer = (props) => {
 
     useEffect(() => {
         props.getAuthUserData()
-    }, [])
+    }, [props.isAuth])
 
     return <>
         {props.isFetching ? <Preloader/> : null}
-        <Header {...props}/>
+        <TopBar {...props}/>
         </>
 }
 

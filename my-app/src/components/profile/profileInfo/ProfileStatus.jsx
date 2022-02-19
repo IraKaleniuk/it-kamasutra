@@ -1,11 +1,20 @@
 import React, {useState} from "react";
+import {useParams} from "react-router-dom";
+import {Alert} from "antd";
 
 const ProfileStatus = (props) => {
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(props.status)
+    const [notAllowed, setNotAllowed] = useState(false);
 
+    let urlParams = useParams()
     const activateEditMode = () => {
-        setEditMode(true)
+        if (urlParams.userId === '22531') {
+                setEditMode(true)
+            }
+        else {
+            setNotAllowed(true)
+        }
     }
     const deactivateEditMode = () => {
         setEditMode(false)
@@ -19,6 +28,17 @@ const ProfileStatus = (props) => {
 
     return (
         <div>
+            { notAllowed ?
+                <Alert
+                    message="Error Action"
+                    description="You can't change status. It's not your profile"
+                    type="error"
+                    closable
+                    onClose={() => {setNotAllowed(false)}}
+                /> :
+                <></>
+            }
+
             {editMode ?
                 <div>
                     <input autoFocus={true}

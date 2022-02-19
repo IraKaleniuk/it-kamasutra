@@ -2,7 +2,6 @@ import {authAPI} from "../api/api";
 
 const SET_AUTH_USER_DATA = 'SET-AUTH-USER-DATA'
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
-const LOG_OUT = 'LOG-OUT'
 
 let initialState = {
     userId: null,
@@ -31,11 +30,6 @@ const authReducer = (state = initialState, action) => {
                 ...state, isFetching: action.isFetching
             })
         }
-        /*case LOG_OUT : {
-            return ({
-                ...state, isAuth: false
-            })
-        }*/
         default:
             return state
     }
@@ -43,8 +37,6 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, email, login) => ({type: SET_AUTH_USER_DATA, data: {userId, email, login}})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
-export const logOut = () => ({type: LOG_OUT})
-
 
 export const getAuthUserData = () => {
     return (dispatch) => {
@@ -55,9 +47,6 @@ export const getAuthUserData = () => {
                 let {id, login, email} = response.data
                 dispatch(setAuthUserData(id, email, login))
             }
-            /*else if (response.resultCode === 1) {
-                dispatch(logOut)
-            }*/
         })
     }
 }

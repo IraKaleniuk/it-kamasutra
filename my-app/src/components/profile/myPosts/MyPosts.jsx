@@ -1,36 +1,75 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from './MyPosts.module.css';
-import Post from "./post/Post";
+import {Comment, List, Form, Button, Input } from "antd";
+import Avatar from "antd/es/avatar/avatar";
+
+const {TextArea} = Input
+
+const Editor = ({ onChange, onSubmit, value }) => (
+    <>
+        <Form.Item>
+            <TextArea rows={4} onChange={onChange} value={value} />
+        </Form.Item>
+        <Form.Item>
+            <Button htmlType="submit" onClick={onSubmit} type="primary">
+                Add New Post
+            </Button>
+        </Form.Item>
+    </>
+);
 
 const MyPosts = (props) => {
-    let postsElements =
-        props.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}/>);
+    const [newPostText, setNewPostText] = useState('')
+    const data = []
+
+    props.posts.forEach(
+        post => {
+            let postItem = {
+                author: "Author",
+                avatar: "https://avatarfiles.alphacoders.com/122/thumb-122644.jpg",
+                content: post.message
+            }
+            data.push(postItem)
+        }
+    )
 
     let onAddPost = () => {
-        props.addPost();
+        props.addPost(newPostText);
     };
 
     let onPostChange = (event) => {
         let text = event.target.value;
-        props.updateNewPostText(text);
+        setNewPostText(text)
     };
 
     return (
         <div className={styles.postsBlock}>
-            <h3>My posts</h3>
-            <div>
-                New posts
-            </div>
-            <div>
-                <textarea onChange={onPostChange}
-                          value={props.newPostText}/>
-            </div>
-            <div>
-                <button onClick={onAddPost}>Add post</button>
-            </div>
-            <div className={styles.posts}>
-                {postsElements}
-            </div>
+            <Comment
+                avatar={<Avatar src="https://avatarfiles.alphacoders.com/122/thumb-122644.jpg" alt="Han Solo" />}
+                content={
+                    <Editor
+                        onChange={onPostChange}
+                        onSubmit={onAddPost}
+                        value={newPostText}
+                    />
+                }
+            />
+
+            <List
+                className="comment-list"
+                header="My posts"
+                itemLayout="horizontal"
+                dataSource={data}
+                renderItem={item => (
+                    <li>
+                        <Comment
+                            author={item.author}
+                            avatar={item.avatar}
+                            content={item.content}
+                        />
+                    </li>
+                )}
+            />
         </div>
     )
 };

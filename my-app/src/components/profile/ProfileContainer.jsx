@@ -21,7 +21,7 @@ const ProfileContainer = (props) => {
         props.getUserProfile(urlParams.userId)
         props.getStatus(urlParams.userId)
 
-    }, [])
+    }, [urlParams.userId])
     return (
         <>
             {props.isFetching ? <Preloader/> : null}

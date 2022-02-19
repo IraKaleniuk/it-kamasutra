@@ -4,12 +4,7 @@ import dialogsReducer from "./dialogsReducer";
 import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
 import thunkMiddleware from "redux-thunk"
-import persistReducer from "redux-persist/es/persistReducer";
-import storage from "redux-persist/es/storage"
-/*const persistConfig = {
-    key: "root",
-    storage
-}*/
+import {composeWithDevTools} from "redux-devtools-extension";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -18,9 +13,7 @@ let reducers = combineReducers({
     auth: authReducer
 })
 
-// const persistedReducer = persistReducer(persistConfig, reducers)
-
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+let store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMiddleware)));
 
 window.store = store
 
