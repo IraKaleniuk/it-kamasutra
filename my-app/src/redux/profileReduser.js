@@ -1,10 +1,10 @@
 import {profileAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_STATUS = 'SET-STATUS'
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
+const SET_LIKES_COUNT = 'SET-LIKES-COUNT'
 
 let initialState = {
     posts: [
@@ -13,7 +13,7 @@ let initialState = {
         {id: 3, message: "It's my first post!", likesCount: 10},
         {id: 4, message: "It's my first post!", likesCount: 10},
     ],
-    newPostText: 'it-kamasutra.com',
+    newPostText: '',
     profile: null,
     status: 'some text',
     isFetching: false
@@ -35,14 +35,6 @@ const profileReducer = (state = initialState, action) => {
                 }
             )
         }
-        case UPDATE_NEW_POST_TEXT: {
-            return (
-                {
-                    ...state,
-                    newPostText: action.newText
-                }
-            )
-        }
         case SET_USER_PROFILE: {
             return (
                 {
@@ -59,6 +51,21 @@ const profileReducer = (state = initialState, action) => {
                 }
             )
         }
+        case SET_LIKES_COUNT: {
+            let localState = {...state, posts: [...state.posts]}
+            localState.posts.forEach(post => {
+                if (action.id === post.id) {
+                    post.likesCount = action.likesCount
+                }
+            })
+            return (
+
+                {
+                    ...localState
+
+                }
+            )
+        }
         case TOGGLE_IS_FETCHING: {
             return (
                 {
@@ -72,14 +79,10 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostCreator = (text) => ({type: ADD_POST, text})
-export const updateNewPostTextCreator = (text) => {
-    return (
-        {type: UPDATE_NEW_POST_TEXT, newText: text}
-    )
-}
+export const addPost = (text) => ({type: ADD_POST, text})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
+export const setLikesCount = (id, likesCount) => ({type: SET_LIKES_COUNT, id, likesCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
 export const getUserProfile = (userId) => {

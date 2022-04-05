@@ -1,15 +1,15 @@
-import React, {useEffect} from "react";
+import React from "react";
 import TopBar from "./Header";
 import {connect} from "react-redux";
-import {getAuthUserData} from "../../redux/authReducer";
+import {getAuthUserData, login} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
 import {compose} from "redux";
 
 const HeaderContainer = (props) => {
-
-    useEffect(() => {
-        props.getAuthUserData()
-    }, [props.isAuth])
+    //
+    // useEffect(() => {
+    //     // props.getAuthUserData()
+    // }, [props.isAuth])
 
     return <>
         {props.isFetching ? <Preloader/> : null}
@@ -25,5 +25,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getAuthUserData})
+    connect(mapStateToProps, {getAuthUserData, login})
 )(HeaderContainer)

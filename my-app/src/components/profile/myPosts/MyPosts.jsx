@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 import styles from './MyPosts.module.css';
-import {Comment, List, Form, Button, Input } from "antd";
+import {Comment, List, Form, Button, Input} from "antd";
 import Avatar from "antd/es/avatar/avatar";
+// import {DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled} from '@ant-design/icons';
 
 const {TextArea} = Input
 
-const Editor = ({ onChange, onSubmit, value }) => (
+const Editor = ({onChange, onSubmit, value}) => (
     <>
         <Form.Item>
-            <TextArea rows={4} onChange={onChange} value={value} />
+            <TextArea rows={4} onChange={onChange} value={value}/>
         </Form.Item>
         <Form.Item>
             <Button htmlType="submit" onClick={onSubmit} type="primary">
@@ -27,7 +28,10 @@ const MyPosts = (props) => {
             let postItem = {
                 author: "Author",
                 avatar: "https://avatarfiles.alphacoders.com/122/thumb-122644.jpg",
-                content: post.message
+                content: post.message,
+                id: post.id,
+                likes: post.likesCount,
+                action: null
             }
             data.push(postItem)
         }
@@ -35,17 +39,18 @@ const MyPosts = (props) => {
 
     let onAddPost = () => {
         props.addPost(newPostText);
-    };
+        setNewPostText('')
+    }
 
     let onPostChange = (event) => {
         let text = event.target.value;
         setNewPostText(text)
-    };
+    }
 
     return (
         <div className={styles.postsBlock}>
             <Comment
-                avatar={<Avatar src="https://avatarfiles.alphacoders.com/122/thumb-122644.jpg" alt="Han Solo" />}
+                avatar={<Avatar src="https://avatarfiles.alphacoders.com/122/thumb-122644.jpg" alt="Han Solo"/>}
                 content={
                     <Editor
                         onChange={onPostChange}

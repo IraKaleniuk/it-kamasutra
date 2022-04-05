@@ -7,8 +7,8 @@ import DialogsContainer from "./components/dialogs/DialogsContainer";
 import UsersContainer from "./components/users/UsersContainer";
 import ProfileContainer from "./components/profile/ProfileContainer";
 import HeaderContainer from "./components/header/HeaderContainer";
-import Login from "./components/login/Login";
 import Layout, {Content} from "antd/es/layout/layout";
+import LoginFormContainer from "./components/login/LogirFormContainer";
 
 const App = () => {
     return (
@@ -38,7 +38,7 @@ const App = () => {
                                 </Route>
                                 <Route path="/users" element={<UsersContainer/>}
                                 />
-                                <Route path="/login" element={<Login/>}
+                                <Route path="/login" element={<LoginFormContainer/>}
                                 />
                             </Routes>
                         </Content>

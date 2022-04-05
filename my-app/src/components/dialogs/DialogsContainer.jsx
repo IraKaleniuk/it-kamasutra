@@ -1,5 +1,5 @@
 import React from "react"
-import {addNewMessage, toggleIsFetching, updateNewMessage} from "../../redux/dialogsReducer"
+import {sendMessage, toggleIsFetching} from "../../redux/dialogsReducer"
 import Dialogs from "./Dialogs"
 import {connect} from "react-redux"
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
@@ -13,6 +13,6 @@ const mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps,
-        {addNewMessage, updateNewMessage, toggleIsFetching}),
+        {sendMessage, toggleIsFetching}),
     withAuthRedirect
 )(Dialogs)

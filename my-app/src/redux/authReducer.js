@@ -2,6 +2,7 @@ import {authAPI} from "../api/api";
 
 const SET_AUTH_USER_DATA = 'SET-AUTH-USER-DATA'
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
+// const LOG_IN = 'LOG-IN'
 
 let initialState = {
     userId: null,
@@ -19,7 +20,6 @@ const authReducer = (state = initialState, action) => {
                     ...state,
                     userId: action.data.userId,
                     email: action.data.email,
-                    login: action.data.login,
                     isAuth: true,
                     isFetching: true
                 }
@@ -37,6 +37,7 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, email, login) => ({type: SET_AUTH_USER_DATA, data: {userId, email, login}})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+// export const setLoginId = (userId) => ({type: LOG_IN, userId})
 
 export const getAuthUserData = () => {
     return (dispatch) => {
@@ -51,14 +52,24 @@ export const getAuthUserData = () => {
     }
 }
 
-export const me = () => {
+    export const login = (email, password, rememberMe) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
-        authAPI.me().then(response => {
+        authAPI.login(email, password, rememberMe).then(response => {
             dispatch(toggleIsFetching(false))
             if (response.resultCode === 0) {
-                let {id, login, email} = response
-                dispatch(setAuthUserData(id, email, login))
+                dispatch(getAuthUserData())
+            }
+        })
+    }
+}
+    export const logout = () => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true))
+        authAPI.logout().then(response => {
+            dispatch(toggleIsFetching(false))
+            if (response.resultCode === 0) {
+                dispatch(getAuthUserData())
             }
         })
     }
