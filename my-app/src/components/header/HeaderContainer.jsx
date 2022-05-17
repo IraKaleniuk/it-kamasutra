@@ -1,7 +1,7 @@
 import React from "react";
 import TopBar from "./Header";
 import {connect} from "react-redux";
-import {getAuthUserData, login} from "../../redux/authReducer";
+import {getAuthUserData, login, logout} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
 import {compose} from "redux";
 
@@ -25,5 +25,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getAuthUserData, login})
+    connect(mapStateToProps, {getAuthUserData, login, logout})
 )(HeaderContainer)

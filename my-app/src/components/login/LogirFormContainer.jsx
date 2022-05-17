@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {getAuthUserData, login} from "../../redux/authReducer";
+import {getAuthUserData, login, logout} from "../../redux/authReducer";
 import Preloader from "../common/preloader/Preloader";
 import {compose} from "redux";
 import {useNavigate} from "react-router-dom";
@@ -22,12 +22,19 @@ const LoginFormContainer = (props) => {
     useEffect(() => {
         if (credentials.email !== "" && credentials.password !== "" && credentials.rememberMe !== undefined)
         {
-            props.login(credentials.email, credentials.password)}
+            props.login(credentials.email, credentials.password, credentials.rememberMe)}
+        else {
+           // props.logout() what should be here?
+        }
     }, [credentials])
 
     useEffect(() => {
        if (props.isAuth) {
            navigate(`/profile/${props.userId}`)
+       }
+        else {
+           navigate(`/login`)
+
        }
     }, [props.isAuth])
 
@@ -45,5 +52,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getAuthUserData, login})
+    connect(mapStateToProps, {getAuthUserData, login, logout})
 )(LoginFormContainer)

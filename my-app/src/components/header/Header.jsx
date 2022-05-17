@@ -2,6 +2,7 @@ import React from "react";
 import styles from './Header.module.css';
 import {NavLink} from "react-router-dom";
 import {Header} from "antd/es/layout/layout";
+import {Button} from "antd";
 
 const TopBar = (props) => {
     return (
@@ -11,8 +12,8 @@ const TopBar = (props) => {
                  alt={props.login}/>
             <div className={styles.loginBlock}>
                 {props.isAuth
-                    ? <NavLink to={'/login'}>Log out </NavLink>
-                    : <NavLink to={'/login'}>Log in </NavLink>}
+                    ? <NavLink to={'/login'}><Button onClick={props.logout}>Log out</Button></NavLink>
+                    : <NavLink to={'/login'}>Log in</NavLink>}
             </div>
         </Header>
     )
